@@ -65,6 +65,29 @@
             100% { transform: translate(-80px, -60px) scale(1.1); }
         }
 
+        /* Postacie po bokach w tle */
+        .side-character {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70vh;
+            max-height: 600px;
+            opacity: 0.25;
+            filter: drop-shadow(0 0 25px rgba(255, 20, 147, 0.6));
+            z-index: 2;
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .side-character.left {
+            left: 5%;
+        }
+
+        .side-character.right {
+            right: 5%;
+            transform: translateY(-50%) scaleX(-1); /* Odbicie lustrzane dla symetrii */
+        }
+
         /* Główna karta (Glassmorphism) */
         .card {
             position: relative;
@@ -89,15 +112,16 @@
                         0 0 45px rgba(255, 20, 147, 0.35);
         }
 
-        /* Kontener na obrazek */
+        /* Kontener na obrazek (poprawiony, by pokazywał całą postać) */
         .image-banner {
             width: 100%;
-            height: 200px;
+            height: 240px;
             border-radius: 18px;
             overflow: hidden;
             margin-bottom: 25px;
             position: relative;
             border: 1px solid rgba(255, 105, 180, 0.3);
+            background: #000;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5),
                         0 0 15px rgba(255, 20, 147, 0.25);
         }
@@ -105,7 +129,7 @@
         .image-banner img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
             transition: transform 0.5s ease;
         }
@@ -184,6 +208,13 @@
         .file-info i {
             color: #ff69b4;
         }
+
+        /* UKRYWANIE BOCZNYCH POSTACI NA MNIEJSZYCH EKRANACH */
+        @media (max-width: 1024px) {
+            .side-character {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,6 +222,10 @@
     <!-- Efekty tła -->
     <div class="glow-bg"></div>
     <div class="glow-bg-2"></div>
+
+    <!-- Obrazki po bokach -->
+    <img class="side-character left" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjennymodlatest.com%2Fwp-content%2Fuploads%2F2025%2F06%2FJenny-Mod-6-scale.png&f=1&nofb=1&ipt=606d2e83c17c79029f96dcccecf8022b4ac9c52e54c5be8310cf2a8ae44904e9" alt="Jenny Left">
+    <img class="side-character right" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjennymodlatest.com%2Fwp-content%2Fuploads%2F2025%2F06%2FJenny-Mod-6-scale.png&f=1&nofb=1&ipt=606d2e83c17c79029f96dcccecf8022b4ac9c52e54c5be8310cf2a8ae44904e9" alt="Jenny Right">
 
     <!-- Główny Kontener -->
     <div class="card">
