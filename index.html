@@ -17,7 +17,8 @@
         }
 
         body {
-            background-color: #0b0711;
+            /* Jasniejsze, rozowo-fioletowe tło gradientowe */
+            background: linear-gradient(135deg, #2b0826 0%, #17051a 50%, #3b0a2e 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -28,19 +29,19 @@
             padding: 20px;
         }
 
-        /* Tło z neonową poświatą */
+        /* Neonowa poświata w tle */
         body::before {
             content: '';
             position: absolute;
-            width: 350px;
-            height: 350px;
+            width: 450px;
+            height: 450px;
             background: #ff1493;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.35;
-            top: 20%;
+            filter: blur(140px);
+            opacity: 0.45;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             z-index: 1;
         }
 
@@ -48,24 +49,23 @@
         .container {
             position: relative;
             z-index: 10;
-            background: rgba(18, 12, 26, 0.85);
-            border: 2px solid rgba(255, 20, 147, 0.3);
+            background: rgba(35, 15, 45, 0.75);
+            border: 2px solid rgba(255, 105, 180, 0.4);
             border-radius: 24px;
             padding: 30px;
             max-width: 440px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 0 30px rgba(255, 20, 147, 0.2);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(255, 20, 147, 0.35);
+            backdrop-filter: blur(12px);
         }
 
-        /* Ramka na podgląd obrazka */
+        /* Kontener na obrazek BEZ CZARNEGO TŁA */
         .image-box {
             width: 100%;
-            height: 220px;
+            height: 240px;
             border-radius: 16px;
-            background: #000;
-            border: 1px solid rgba(255, 105, 180, 0.3);
+            background: transparent;
             margin-bottom: 20px;
             overflow: hidden;
             display: flex;
@@ -74,9 +74,10 @@
         }
 
         .image-box img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(255, 20, 147, 0.5));
         }
 
         /* Nagłówek */
@@ -89,7 +90,7 @@
         }
 
         p {
-            color: #b3a3be;
+            color: #d1b8dc;
             font-size: 0.9rem;
             margin-bottom: 25px;
         }
@@ -108,13 +109,13 @@
             font-weight: 600;
             font-size: 1.05rem;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.5);
             transition: all 0.3s ease;
         }
 
         .btn-download:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.8);
             background: linear-gradient(135deg, #ff33a6, #ff1493);
         }
 
@@ -124,9 +125,9 @@
             justify-content: space-between;
             margin-top: 20px;
             padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             font-size: 0.8rem;
-            color: #8c7b99;
+            color: #a892b5;
         }
 
         .info span i {
@@ -138,7 +139,7 @@
 <body>
 
     <div class="container">
-        <!-- Obrazek Moda -->
+        <!-- Obrazek Moda (bez czarnego tła) -->
         <div class="image-box">
             <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjennymodlatest.com%2Fwp-content%2Fuploads%2F2025%2F06%2FJenny-Mod-6-scale.png&f=1&nofb=1&ipt=606d2e83c17c79029f96dcccecf8022b4ac9c52e54c5be8310cf2a8ae44904e9" alt="Jenny Mod Preview">
         </div>
