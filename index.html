@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Jenny Mod 1.20</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0d0a12;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animowane plamy świetlne w tle */
+        .glow-bg {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.4) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        .glow-bg-2 {
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.3) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 1;
+            animation: float2 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-100px, -100px) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.2); }
+        }
+
+        @keyframes float2 {
+            0% { transform: translate(50px, 50px) scale(1); }
+            100% { transform: translate(-100px, -80px) scale(1.1); }
+        }
+
+        /* Główna karta (Glassmorphism) */
+        .card {
+            position: relative;
+            z-index: 10;
+            background: rgba(20, 15, 28, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                        0 0 30px rgba(255, 20, 147, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9),
+                        0 0 40px rgba(255, 20, 147, 0.35);
+        }
+
+        /* Ikona i Tytuł */
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #fff, #ff69b4, #ff1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
+        }
+
+        p {
+            color: #b3a3be;
+            font-size: 0.95rem;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        /* Przyciski */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            background: linear-gradient(135deg, #ff1493, #d80073);
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.5),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, #ff33a6, #ff1493);
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.7),
+                        0 0 25px rgba(255, 105, 180, 0.8);
+        }
+
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+
+        /* Szczegóły pliku */
+        .file-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            color: #8c7b99;
+        }
+
+        .file-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .file-info i {
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Efekty tła -->
+    <div class="glow-bg"></div>
+    <div class="glow-bg-2"></div>
+
+    <!-- Główny Kontener -->
+    <div class="card">
+        <div class="icon-box">
+            <i class="fa-solid fa-cube"></i>
+        </div>
+        <h1>Jenny Mod 1.20</h1>
+        <p>Pobierz najnowszą wersję moda bezpośrednio z repozytorium GitHub.</p>
+
+        <!-- Przycisk Pobierania -->
+        <a href="jenny-mod-1.20.jar" download class="btn-download">
+            <i class="fa-solid fa-download"></i>
+            Pobierz Plik (.jar)
+        </a>
+
+        <div class="file-info">
+            <span><i class="fa-solid fa-file-code"></i> Wersja: 1.20</span>
+            <span><i class="fa-solid fa-shield-halved"></i> Bezpieczne</span>
+        </div>
+    </div>
+
+</body>
+</html>
